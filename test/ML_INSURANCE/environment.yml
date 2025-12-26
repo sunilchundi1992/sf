@@ -3,3 +3,4 @@ channels:
   - snowflake
 dependencies:
   - scikit-learn=*
+  - snowflake-ml-python=*
