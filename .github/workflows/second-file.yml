@@ -1,14 +1,13 @@
+name: Test Schedule
+
 on:
   schedule:
-    - cron: '*/1 * * * 3,4'
-    - cron: '30 5,17 * * 2,4'
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
 
 jobs:
-  test_schedule:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Not on Monday or Wednesday
-        if: github.event.schedule != '30 5 * * 1,3'
-        run: echo "This step will be skipped on Monday and Wednesday"
-      - name: Every time
-        run: echo "This step will always run-Sunil"
+      - run: date -u
+      - run: echo "Workflow triggered!"
